@@ -1,0 +1,6 @@
+{
+  "name": "RHA Guesthouse",
+  "description": "Premium hospitality website for RHA Guest House located in G-13, Islamabad near Srinagar Highway.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

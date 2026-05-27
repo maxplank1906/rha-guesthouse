@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Libre Baskerville', serif;
+  --font-sans: 'Outfit', sans-serif;
+
+  --color-ivory-bg: #FAFAF7;
+  --color-luxury-ink: #16150F;
+  --color-luxury-ink2: #2C2B24;
+  --color-bronze: #A8813A;
+  --color-bronze-light: #C49B4B;
+  --color-bronze-pale: #F5EDD8;
+  --color-luxury-muted: #8A897E;
+  --color-luxury-border: #E8E4DA;
+  --color-luxury-dark: #1A1914;
+
+  --animate-fade-in: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------------------
+   GLOBAL DESIGN SYSTEM RESETS
+   ----------------------------------------- */
+body {
+  background-color: var(--color-ivory-bg);
+  color: var(--color-luxury-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth selection colors for boutique theme matching */
+::selection {
+  background-color: var(--color-bronze-pale);
+  color: var(--color-bronze);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-luxury-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bronze-light);
+}
+
+/* Custom layout utilities */
+@utility container-luxury {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  @media (min-width: 768px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@utility section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  @media (min-width: 768px) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* -----------------------------------------
+   PREMIUM BUTTON UTILITIES
+   ----------------------------------------- */
+@utility btn-primary-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-luxury-ink);
+  color: #ffffff;
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-luxury-ink);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  
+  &:hover {
+    background-color: var(--color-bronze);
+    border-color: var(--color-bronze);
+    color: #ffffff;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-bronze-light);
+    outline-offset: 2px;
+  }
+}
+
+@utility btn-secondary-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-luxury-ink);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-luxury-border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  
+  &:hover {
+    border-color: var(--color-luxury-ink);
+    background-color: rgba(22, 21, 15, 0.02);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-luxury-ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility btn-bronze-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-bronze-light);
+  color: var(--color-luxury-ink);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-bronze-light);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  
+  &:hover {
+    background-color: var(--color-bronze);
+    border-color: var(--color-bronze);
+    color: #ffffff;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 2px;
+  }
+}
+
+@utility btn-wa-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background-color: #25D366;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  
+  &:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  }
+  &:focus-visible {
+    outline: 2px solid #25D366;
+    outline-offset: 2px;
+  }
+}
+
+/* -----------------------------------------
+   LUXURY CARD & CONTAINER UTILITIES
+   ----------------------------------------- */
+@utility card-luxury {
+  background-color: #ffffff;
+  border: 1px solid var(--color-luxury-border);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@utility card-luxury-hover {
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(168, 129, 58, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border-color: var(--color-bronze-light);
+  }
+}
+
+@utility luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-bronze-pale);
+  color: var(--color-bronze);
+  font-size: 0.5625rem; /* 9px */
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.375rem 0.875rem;
+}
+
+/* Heading scales corresponding to classical boutique proportions */
+@utility text-heading-hero {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+}
+
+@utility text-heading-section {
+  font-family: var(--font-serif);
+  font-size: clamp(1.625rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+@utility text-heading-card {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
