@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { roomsData } from '../data/rooms';
 import { GUESTHOUSE_CONFIG } from '../config';
-import { Check, MessageSquare, Coffee, Shield, Wifi } from 'lucide-react';
+import { Check, MessageSquare } from 'lucide-react';
 import { Room } from '../types';
+import RoomCarousel from '../components/RoomCarousel';
 
 interface RoomsPageProps {
   selectedRoomId?: string | null;
@@ -24,7 +25,7 @@ export default function Rooms({ selectedRoomId, onClearSelectedRoom }: RoomsPage
 
   const handleInquiry = (room: Room) => {
     const formattedText = encodeURIComponent(`Hi, I want to book the ${room.name}`);
-    const waUrl = `https://wa.me/923337477769?text=${formattedText}`;
+    const waUrl = `https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=${formattedText}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -56,17 +57,10 @@ export default function Rooms({ selectedRoomId, onClearSelectedRoom }: RoomsPage
               selectedRoomId === room.id ? 'ring-2 ring-[#C49B4B] shadow-md' : ''
             }`}
           >
-            {/* Image Block */}
-            <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-auto">
-              <img 
-                src={room.imageUrl} 
-                alt={room.name}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute top-4 left-4 bg-[#16150F] text-[#C49B4B] text-[8px] font-semibold tracking-wider uppercase py-1.5 px-3">
+            {/* Image Block with Premium Carousel */}
+            <div className="lg:w-1/2 relative min-h-[350px] lg:min-h-auto flex flex-col justify-stretch">
+              <RoomCarousel images={room.carouselImages} roomName={room.name} />
+              <div className="absolute top-4 left-4 bg-[#16150F] text-[#C49B4B] text-[8px] font-semibold tracking-wider uppercase py-1.5 px-3 z-10">
                 {room.tag}
               </div>
             </div>

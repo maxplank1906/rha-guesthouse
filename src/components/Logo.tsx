@@ -63,7 +63,7 @@ export default function Logo({ layout = 'grande', light = false, className = '',
             className="text-[9px] font-bold tracking-[0.2em] uppercase leading-none mt-1"
             style={{ color: goldColor }}
           >
-            GUEST HOUSE
+            LODGES
           </span>
           <span 
             className="text-[7.5px] font-light tracking-[0.14em] uppercase leading-none mt-1"
@@ -90,7 +90,7 @@ export default function Logo({ layout = 'grande', light = false, className = '',
           className="text-[10px] uppercase font-light tracking-[0.2em] ml-1"
           style={{ color: goldColor }}
         >
-          Guesthouse
+          Lodges
         </span>
       </div>
     );
@@ -156,7 +156,7 @@ export default function Logo({ layout = 'grande', light = false, className = '',
           className="text-[10px] font-bold tracking-[0.24em] uppercase"
           style={{ color: goldColor }}
         >
-          GUEST HOUSE
+          LODGES
         </span>
         <div className="h-[1px] w-5" style={{ backgroundColor: goldColor }} />
       </div>

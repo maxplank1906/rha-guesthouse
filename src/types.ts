@@ -12,6 +12,7 @@ export interface Room {
   amenities: string[];
   imageUrl: string;
   additionalImages?: string[];
+  carouselImages: string[];
   whatsappMessage: string;
 }
 

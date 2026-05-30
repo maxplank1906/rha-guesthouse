@@ -12,7 +12,7 @@ export default function RoomCard({ room, onViewDetails }: RoomCardProps) {
   // Direct requested WhatsApp Booking link helper based on categories
   const getWhatsAppLink = (roomName: string) => {
     const formattedText = encodeURIComponent(`Hi, I want to book the ${roomName}`);
-    return `https://wa.me/923337477769?text=${formattedText}`;
+    return `https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=${formattedText}`;
   };
 
   return (

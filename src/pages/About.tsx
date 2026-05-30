@@ -37,13 +37,13 @@ export default function About() {
       <div className="bg-white border-b border-[#E8E4DA] py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-3">
           <span className="text-[10px] font-semibold tracking-[0.26em] uppercase text-[#A8813A] flex items-center justify-center gap-1.5">
-            <Stars size={12} className="text-[#A8813A]" /> RHA Guesthouse Story & Comfort
+            <Stars size={12} className="text-[#A8813A]" /> RHA Lodges Story & Comfort
           </span>
           <h1 className="font-serif text-heading-section text-[#16150F] mt-2">
             Where Comfort Meets Elegance
           </h1>
           <p className="text-xs sm:text-sm font-light text-[#8A897E] max-w-xl mx-auto leading-relaxed">
-            Nestled inside the elite G-13/1 sector of Islamabad right next to Srinagar Highway, RHA Guest House offers unmatched tranquility, elite security, and bespoke boutique style.
+            Nestled inside the elite G-13/1 sector of Islamabad right next to Srinagar Highway, RHA Lodges offers unmatched tranquility, elite security, and bespoke boutique style.
           </p>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function About() {
             Catering to Diplomatic, Corporate & Family Travelers
           </h2>
           <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed">
-            RHA Guesthouse was born out of a desire to provide a peaceful oasis for visitors seeking premium, hotel-grade luxury combined with the warm, personalized touch of home. Over the years, we have hosted national and international visitors who praise our spotless cleanliness, attentive team, and secure prestige surroundings.
+            RHA Lodges was born out of a desire to provide a peaceful oasis for visitors seeking premium, hotel-grade luxury combined with the warm, personalized touch of home. Over the years, we have hosted national and international visitors who praise our spotless cleanliness, attentive team, and secure prestige surroundings.
           </p>
           <div className="pt-2 flex flex-col gap-3">
             <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ export default function About() {
 
         <div className="relative">
           <img 
-            src="/images/resort_sunset_palm.webp" 
+            src="/images/outside.webp" 
             alt="Courtyard lounge seating"
             loading="lazy"
             decoding="async"
@@ -134,7 +134,7 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-6 mt-28">
         <div className="bg-[#F5EDD8] border border-[#A8813A]/20 p-8 md:p-12 text-center space-y-4">
           <p className="font-serif text-base sm:text-lg italic text-[#16150F] leading-relaxed">
-            "RHA Guest House has redefined what premium corporate travelers should expect in Rawalpindi & Islamabad. Unwavering security standards, incredibly clean spaces, and instant WhatsApp solutions keep us choosing them."
+            "RHA Lodges has redefined what premium corporate travelers should expect in Rawalpindi & Islamabad. Unwavering security standards, incredibly clean spaces, and instant WhatsApp solutions keep us choosing them."
           </p>
           <span className="text-xs font-semibold tracking-wider text-[#A8813A] uppercase block">
             — Dr. Shahzad Ahmed, Regular Corporate Guest

@@ -56,7 +56,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
       <button
         id="nav-logo"
         onClick={() => handleNavClick('home')}
-        aria-label="RHA Guest House — Back to home overview"
+        aria-label="RHA Lodges — Back to home overview"
         className="flex items-center text-left cursor-pointer bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 transition-transform duration-300 hover:opacity-95"
       >
         <Logo layout="horizontal" light={!isDarkBackground} />
@@ -99,7 +99,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
           {GUESTHOUSE_CONFIG.phone}
         </a>
         <a
-          href="https://wa.me/923337477769"
+          href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Book rooms instantly by contacting 24/7 WhatsApp concierge"
@@ -161,7 +161,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
               {GUESTHOUSE_CONFIG.phone}
             </a>
             <a
-              href="https://wa.me/923337477769"
+              href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book rooms instantly by starting WhatsApp conversation with the reservation clerk"

@@ -22,7 +22,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
   const faqData = [
     {
       question: "How far is Islamabad Airport?",
-      answer: "RHA Guest House is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free."
+      answer: "RHA Lodges is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free."
     },
     {
       question: "Is parking available?",
@@ -42,7 +42,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
     },
     {
       question: "Is family stay available?",
-      answer: "Yes, RHA Guest House is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad."
+      answer: "Yes, RHA Lodges is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad."
     }
   ];
   // We can render standard Lucide icons based on standard strings
@@ -91,8 +91,10 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
       <header className="relative min-h-[680px] h-screen flex items-center justify-center overflow-hidden">
         {/* Optimized Hero Background image using prioritised img tag to secure optimal FCP & LCP */}
         <img 
-          src="/images/room_executive_blue.webp" 
-          alt="Luxury premium suite at RHA Guest House Islamabad" 
+          src="/images/hero.webp" 
+          width={1736}
+          height={906}
+          alt="Beautiful exterior facade of RHA Lodges Islamabad G-13" 
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 saturate-110 select-none pointer-events-none"
           fetchPriority="high"
           referrerPolicy="no-referrer"
@@ -114,7 +116,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           </h1>
           
           <p className="text-xs sm:text-sm md:text-base font-light text-white/80 leading-relaxed max-w-2xl mb-8">
-            Elegant guest house in G-13 Islamabad near Srinagar Highway. 15 mins from Islamabad Airport, Faisal Masjid, Centaurus Mall, and Pakistan Monument.
+            Elegant premium lodges in G-13 Islamabad near Srinagar Highway. 15 mins from Islamabad Airport, Faisal Masjid, Centaurus Mall, and Pakistan Monument.
           </p>
 
           {/* Premium Feature Badges */}
@@ -135,7 +137,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
             <a
-              href="https://wa.me/923337477769"
+              href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] hover:scale-[1.02] text-white text-xs font-bold tracking-[0.14em] uppercase py-4.5 px-8 shadow-lg transition-all duration-300 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
@@ -273,7 +275,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               Crafted for Your Absolute Comfort
             </h2>
             <p className="text-xs sm:text-sm font-light text-white/60 leading-relaxed">
-              Every detail of your experience at RHA Guest House is curated to provide seamless corporate, diplomatic, and family stays right near the heart of the capital.
+              Every detail of your experience at RHA Lodges is curated to provide seamless corporate, diplomatic, and family stays right near the heart of the capital.
             </p>
           </div>
 
@@ -329,7 +331,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 Explore Islamabad's Top Landmarks
               </h2>
               <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed">
-                Located in the prestigious <strong className="font-medium text-[#16150F]">G-13 sector of Islamabad</strong> near the <strong className="font-semibold text-[#16150F]">Srinagar Highway</strong> entry ramps, <strong className="text-[#A8813A] font-medium">RHA GUEST HOUSE</strong> places you within minutes of major transport lanes, commercial hotspots, and tourist destinations.
+                Located in the prestigious <strong className="font-medium text-[#16150F]">G-13 sector of Islamabad</strong> near the <strong className="font-semibold text-[#16150F]">Srinagar Highway</strong> entry ramps, <strong className="text-[#A8813A] font-medium">RHA LODGES</strong> places you within minutes of major transport lanes, commercial hotspots, and tourist destinations.
               </p>
             </div>
             
@@ -508,7 +510,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               Premium Interior Preview
             </h2>
             <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed">
-              Step inside RHA Guest House in G-13 Islamabad. Tour our pristine execution spaces, elegant fittings, and calm environments.
+              Step inside RHA Lodges in G-13 Islamabad. Tour our pristine execution spaces, elegant fittings, and calm environments.
             </p>
           </div>
 
@@ -518,8 +520,8 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             {/* Gallery Item 1: Facade Entrance */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/resort_pool_guesthouse.webp" 
-                alt="RHA Guest House outdoor ambient view"
+                src="/images/outside.webp" 
+                alt="RHA Lodges outdoor entrance facade"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -534,8 +536,8 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             {/* Gallery Item 2: Executive Room */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/luxury_suite_art.webp" 
-                alt="Executive suite room styling and interior layout"
+                src="/images/executive1.webp" 
+                alt="Executive suite rooms layout interior"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -550,8 +552,8 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             {/* Gallery Item 3: Deluxe bedding */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/room_deluxe_green.webp" 
-                alt="Pristine white boutique bed setup"
+                src="/images/standard6.webp" 
+                alt="Pristine white premium bed setup"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -566,15 +568,15 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             {/* Gallery Item 4: Modern Bunk Space */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/guesthouse_bunk_beds.webp" 
-                alt="High-end bunk room and dual layout setup"
+                src="/images/deluxe1.webp" 
+                alt="High-end deluxe rooms with premium layouts"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-750 ease-out sm:group-hover:scale-105 opacity-90 sm:group-hover:opacity-100"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#16150f]/85 via-[#16150f]/40 to-transparent p-5 flex flex-col justify-end">
-                <span className="text-[8px] font-bold text-[#C49B4B] tracking-[0.16em] uppercase block">Bunk/Cozy space</span>
+                <span className="text-[8px] font-bold text-[#C49B4B] tracking-[0.16em] uppercase block">Deluxe suite</span>
                 <h4 className="font-serif text-sm text-white font-normal mt-0.5">Modern Fitting Standards</h4>
               </div>
             </div>
@@ -582,8 +584,8 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             {/* Gallery Item 5: Twilight Evening Courtyard */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/resort_evening_pool.webp" 
-                alt="Illuminated twilight pool and dining area"
+                src="/images/terrace1.webp" 
+                alt="Open air balcony sitting and panoramic scenes"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -591,23 +593,23 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#16150f]/85 via-[#16150f]/40 to-transparent p-5 flex flex-col justify-end">
                 <span className="text-[8px] font-bold text-[#C49B4B] tracking-[0.16em] uppercase block">Boutique Evening</span>
-                <h4 className="font-serif text-sm text-white font-normal mt-0.5">Twilight Pool Reflections</h4>
+                <h4 className="font-serif text-sm text-white font-normal mt-0.5">Twilight Sky Views</h4>
               </div>
             </div>
 
             {/* Gallery Item 6: Comfort Suite */}
             <div className="relative overflow-hidden group aspect-[4/3] bg-[#16150f] border border-[#E8E4DA]/40 shadow-sm focus-within:ring-2 focus-within:ring-[#C49B4B]">
               <img 
-                src="/images/room_standard_gray.webp" 
-                alt="Comfort executive bedroom suite"
+                src="/images/dinning.webp" 
+                alt="Bespoke dining and breakfast space setup"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-750 ease-out sm:group-hover:scale-105 opacity-90 sm:group-hover:opacity-100"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#16150f]/85 via-[#16150f]/40 to-transparent p-5 flex flex-col justify-end">
-                <span className="text-[8px] font-bold text-[#C49B4B] tracking-[0.16em] uppercase block">Boutique Suite</span>
-                <h4 className="font-serif text-sm text-white font-normal mt-0.5">Relaxed Living Environment</h4>
+                <span className="text-[8px] font-bold text-[#C49B4B] tracking-[0.16em] uppercase block">Boutique Hall</span>
+                <h4 className="font-serif text-sm text-white font-normal mt-0.5">Relaxed Dining Environment</h4>
               </div>
             </div>
 
@@ -644,7 +646,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               Frequently Answered Queries
             </h2>
             <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed max-w-2xl mx-auto">
-              Find quick answers to common questions about your premium boutique stay at RHA Guest House in G-13 Islamabad.
+              Find quick answers to common questions about your premium boutique stay at RHA Lodges in G-13 Islamabad.
             </p>
           </div>
 
@@ -731,7 +733,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           {/* Core Booking Trigger Action button */}
           <div className="flex flex-col items-center gap-6 pt-2">
             <a
-              href="https://wa.me/923337477769"
+              href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] hover:scale-[1.02] text-white text-xs font-bold tracking-[0.16em] uppercase py-5 px-10 shadow-2xl transition-all duration-300 w-full sm:w-auto text-center justify-center rounded-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"

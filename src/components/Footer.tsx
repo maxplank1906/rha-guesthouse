@@ -55,7 +55,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               onClick={() => handleNavClick('about')}
               className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
             >
-              <span>About Our Guesthouse</span>
+              <span>About Our Lodges</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
             </button>
             <button
@@ -125,7 +125,7 @@ export default function Footer({ onPageChange }: FooterProps) {
 
             <div className="space-y-2">
               <a
-                href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=Hello%20RHA%20Guesthouse,%20I%20would%20like%20to%20reserve%20a%20stay.%20Please%20confirm%20availability.`}
+                href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=Hello%20RHA%20Lodges,%20I%20would%20like%20to%20reserve%20a%20stay.%20Please%20confirm%20availability.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 hover:text-[#C49B4B] transition-colors group text-white/60"
@@ -174,7 +174,7 @@ export default function Footer({ onPageChange }: FooterProps) {
             target="_blank" 
             rel="noopener noreferrer"
             className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#C49B4B] transition-all bg-white/[0.01]"
-            aria-label="Follow RHA Guest House on Facebook"
+            aria-label="Follow RHA Lodges on Facebook"
           >
             <Facebook size={12} />
           </a>

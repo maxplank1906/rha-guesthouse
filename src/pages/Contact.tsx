@@ -19,7 +19,7 @@ import { GUESTHOUSE_CONFIG } from '../config';
 const FAQ_ITEMS = [
   {
     question: "How far is Islamabad Airport?",
-    answer: "RHA Guest House is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free."
+    answer: "RHA Lodges is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free."
   },
   {
     question: "Is parking available?",
@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is family stay available?",
-    answer: "Yes, RHA Guest House is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad."
+    answer: "Yes, RHA Lodges is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad."
   }
 ];
 
@@ -61,7 +61,7 @@ export default function Contact() {
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('House 58 St 101, G-13/1, Islamabad');
+    navigator.clipboard.writeText('House 58 St 101, G-13/1, G-13, Islamabad, Pakistan');
     setCopiedAddress(true);
     setTimeout(() => {
       setCopiedAddress(false);
@@ -82,7 +82,7 @@ export default function Contact() {
     setFormError('');
 
     const compiledMessage = 
-      `Hello RHA Guest House!\n\n` +
+      `Hello RHA Lodges!\n\n` +
       `I would like to request a booking/reservation inquiry:\n\n` +
       `• Guest Name: ${name}\n` +
       `• Contact Phone: ${phone || 'Not specified'}\n` +
@@ -93,7 +93,7 @@ export default function Contact() {
       (message.trim() ? `\nSpecial Request details:\n"${message}"` : '\nPlease check availability for these dates.');
 
     const encodedText = encodeURIComponent(compiledMessage);
-    const whatsappUrl = `https://wa.me/923337477769?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=${encodedText}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -107,7 +107,7 @@ export default function Contact() {
             24/7 G-13 Concierge Desk
           </span>
           <h1 className="font-serif text-4xl sm:text-5.5xl font-normal text-[#16150F] leading-tight-none tracking-tight">
-            Connect With RHA Guest House
+            Connect With RHA Lodges
           </h1>
           <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed max-w-2xl mx-auto">
             Conveniently positioned close to the <strong className="font-semibold text-[#16150F]">Srinagar Highway exit in G-13/1, Islamabad</strong>, we provide easy access to the motorway junctions, supreme corporate capitals, and international transit terminals.
@@ -503,7 +503,7 @@ export default function Contact() {
           </p>
           <div className="pt-2">
             <a
-              href="https://wa.me/923337477769?text=Hello%20RHA%20Guest%20House,%20I'd%20like%20to%20reserve%20a%20Premium%20Deluxe%20stay.%20Please%20confirm%20availability."
+              href={`https://wa.me/${GUESTHOUSE_CONFIG.whatsappNumberUrl}?text=Hello%20RHA%20Lodges,%20I'd%20like%20to%20reserve%20a%20Premium%20Deluxe%20stay.%20Please%20confirm%20availability.`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct Instant WhatsApp Chat Reservation in G-13"

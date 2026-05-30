@@ -11,9 +11,19 @@ export const roomsData: Room[] = [
     bedType: 'Double Bed',
     size: '250 sq. ft.',
     amenities: ['Complimentary Breakfast', 'Superfast Fiber WiFi', 'Climate Control AC', 'Smart LED TV', 'Modern Attached Bath'],
-    imageUrl: '/images/room_standard_gray.webp',
+    imageUrl: '/images/standard6.webp',
     additionalImages: [
-      '/images/room_deluxe_green.webp'
+      '/images/standard1.webp',
+      '/images/standard2.webp',
+      '/images/standard3.webp'
+    ],
+    carouselImages: [
+      '/images/standard1.webp',
+      '/images/standard2.webp',
+      '/images/standard3.webp',
+      '/images/standard4.webp',
+      '/images/standard5.webp',
+      '/images/standard6.webp'
     ],
     whatsappMessage: 'Hi, I want to book the Standard Room'
   },
@@ -23,13 +33,17 @@ export const roomsData: Room[] = [
     tag: 'Boutique Deluxe',
     description: 'Elevated space with premium furnishings, customizable lighting, and pristine dual-gate security views. Ideal for business and solo travellers.',
     price: 8000,
-    capacity: '2 Adults',
+    capacity: '3 Adults',
     bedType: 'King Bed',
     size: '320 sq. ft.',
     amenities: ['Complimentary Breakfast', 'Superfast Fiber WiFi', 'Climate Control AC Inverter', 'Smart LED 4K Screen', 'Premium Hand-crafted Desk', 'Pristine Bathroom'],
-    imageUrl: '/images/room_deluxe_green.webp',
+    imageUrl: '/images/deluxe1.webp',
     additionalImages: [
-      '/images/room_standard_gray.webp'
+      '/images/deluxe2.webp'
+    ],
+    carouselImages: [
+      '/images/deluxe1.webp',
+      '/images/deluxe2.webp'
     ],
     whatsappMessage: 'Hi, I want to book the Deluxe Room'
   },
@@ -39,14 +53,22 @@ export const roomsData: Room[] = [
     tag: 'Suites Luxury',
     description: 'Our flagship executive sanctuary featuring upscale local wood detailing, high-speed fiber internet, and complimentary Pakistani hot paratha breakfast.',
     price: 11000,
-    capacity: '3 Adults',
+    capacity: '4-5 Adults',
     bedType: 'Super King Bed',
     size: '420 sq. ft.',
     amenities: ['Complimentary Breakfast', 'Superfast Fiber WiFi', 'Climate Control AC Inverter', '4K LED TV with Premium Streaming', 'Plush Sofa Seating Area', 'Standby Power Backup'],
-    imageUrl: '/images/room_executive_blue.webp',
+    imageUrl: '/images/executive1.webp',
     additionalImages: [
-      '/images/luxury_suite_art.webp',
-      '/images/room_standard_gray.webp'
+      '/images/executive2.webp',
+      '/images/executive3.webp'
+    ],
+    carouselImages: [
+      '/images/executive1.webp',
+      '/images/executive2.webp',
+      '/images/executive3.webp',
+      '/images/executive4.webp',
+      '/images/executive5.webp',
+      '/images/executive6.webp'
     ],
     whatsappMessage: 'Hi, I want to book the Executive Room'
   }

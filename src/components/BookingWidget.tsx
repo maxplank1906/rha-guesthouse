@@ -58,7 +58,7 @@ export default function BookingWidget() {
     const cin = formatDate(checkIn);
     const cout = formatDate(checkOut);
     
-    const message = `Hello RHA Guest House Islamabad! 👋\n\n` +
+    const message = `Hello RHA Lodges Islamabad! 👋\n\n` +
       `I would like to check room availability and rates for a premium stay on your boutique property:\n\n` +
       `🏨 Bed/Room Type: *${roomType}*\n` +
       `📅 Check-In Date: *${cin}*\n` +

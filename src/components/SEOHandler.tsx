@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ActivePage } from '../types';
+import { GUESTHOUSE_CONFIG } from '../config';
 
 interface SEOHandlerProps {
   activePage: ActivePage;
@@ -12,42 +13,47 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     let description = '';
     let keywords = '';
 
+    const bName = GUESTHOUSE_CONFIG.name; // RHA Lodges
+    const bPhone = GUESTHOUSE_CONFIG.phone; // +92 314 5961156
+    const bEmail = GUESTHOUSE_CONFIG.email; // rhalodges@gmail.com
+    const bAddress = GUESTHOUSE_CONFIG.address;
+
     switch (activePage) {
       case 'home':
-        title = 'RHA Guest House — Premium Guest House in Islamabad G-13 near Srinagar Highway';
-        description = 'Experience premium hospitality at RHA Guest House, the leading family guest house in G-13 Islamabad near Srinagar Highway and Islamabad Airport. Top rooms for rent in Islamabad with breakfast, WiFi, and gated parking courtyard.';
-        keywords = 'guest house in Islamabad, guest house in G-13, guest house near Srinagar Highway, guest house near Islamabad airport, family guest house Islamabad, family guest house g-13, rha guesthouse islamabad, rooms for rent in islamabad, airbnb g13, book guest house';
+        title = `${bName} — Premium Luxury Lodges in Islamabad G-13 near Srinagar Highway`;
+        description = `Experience premium hospitality at ${bName}, the leading family lodging standard in G-13 Islamabad near Srinagar Highway and Islamabad Airport. Dual-gate security safety, WiFi, and gated courtyard parking.`;
+        keywords = 'lodges in Islamabad, guest house in G-13, lodges in G-13, luxury stay G13, guest house near Srinagar Highway, family guest house Islamabad, rha lodges islamabad, rha guesthouse islamabad, rooms for rent in islamabad, airbnb g13 islamabad';
         break;
       case 'rooms':
-        title = 'Rooms for Rent in Islamabad G-13 — Executive & Family Suites | RHA Guest House';
-        description = 'Secure premium rooms for rent in Islamabad G-13. Review our master bed Executive Suites and Deluxe Rooms. High-speed fiber internet, local breakfasts, and 24/7 security guard shelter.';
-        keywords = 'rooms for rent in islamabad, guest house in G-13, guest house in Islamabad, family guest house g-13, rha guesthouse islamabad, airbnb g13';
+        title = `Rooms & Executive Suites for Rent G-13 Islamabad | ${bName}`;
+        description = `Book pristine rooms for rent in Islamabad G-13. Discover our master Bed Executive Suites and Deluxe Rooms featuring climate AC, high-speed fiber internet, and complimentary Pakistani breakfast.`;
+        keywords = 'rooms for rent in islamabad, guest house in G-13, lodges in G-13, rha lodges rooms, luxury accommodation islamabad, airbnb g13';
         break;
       case 'about':
-        title = 'Our Heritage & Security Standards — Family Guest House G-13 Islamabad | RHA';
-        description = 'Established as the elite family guest house G-13 Islamabad near Srinagar Highway. Discover our strict visitor screening protocols, hygiene certifications, and complimentary organic breakfast services.';
-        keywords = 'family guest house Islamabad, family guest house g-13, rha guesthouse islamabad, secure lodging islamabad, g13 guesthouse';
+        title = `Heritage & Security Standards — Family Lodges G-13 Islamabad | ${bName}`;
+        description = `Established as the premier secure lodging destination in G-13 Islamabad. Learn about our dual-gate security shielding, immaculate hygiene standards, and organic home breakfasts.`;
+        keywords = 'family guest house Islamabad, family lodges g-13, rha lodges security, secure lodging islamabad, g13 premium stay';
         break;
       case 'gallery':
-        title = 'Ambient Gallery — Premium Guest House G-13 Islamabad close to Airport';
-        description = 'View pristine high-definition interior images of RHA Guest House. Tour executive master bedding, attached sanitary restrooms, secure family lounges, and easy highway accesses.';
-        keywords = 'rha guesthouse islamabad, guest house near Islamabad airport, guest house in G-13, guest house near Srinagar Highway, room pictures Islamabad';
+        title = `Visual Gallery — Premium Interior & Rooms Preview | ${bName}`;
+        description = `Explore high-definition photos of ${bName} G-13 Islamabad. Tour our executive bedrooms, spotless attached bathrooms, elegant dining layouts, and scenic balcony terraces.`;
+        keywords = 'rha lodges gallery, room pictures Islamabad, guest house photo tour, luxury lodging spaces G13';
         break;
       case 'contact':
-        title = 'Contact & Book Guest House in Islamabad G-13 | RHA Guesthouse Desk';
-        description = 'Ready to book a guest house? Contact our 24/7 G-13 Islamabad desk. Located 15 minutes from Islamabad Airport near Srinagar Highway exit. Fill the form to book instantly on WhatsApp.';
-        keywords = 'book guest house, guest house in Islamabad, guest house in G-13, guest house near Islamabad airport, airbnb g13, contact rha guest house';
+        title = `Contact & WhatsApp Booking Desk G-13 Islamabad | ${bName}`;
+        description = `Ready to book? Connect with our 24/7 G-13 concierge desk. Located near Srinagar Highway exit, 15 minutes from Islamabad Airport. Instant WhatsApp booking form.`;
+        keywords = 'book guest house, contact rha lodges, book rha guest house, lodges near Islamabad airport, whatsapp booking g13';
         break;
       default:
-        title = 'RHA Guest House — Premium Guest House in Islamabad G-13 near Srinagar Highway';
-        description = 'Boutique hospitality with top safety standards in G-13, Islamabad near Srinagar Highway. Gated parking, WiFi & complimentary breakfast.';
-        keywords = 'guest house in Islamabad, guest house in G-13, guest house near Srinagar Highway';
+        title = `${bName} — Premium Luxury Lodges in Islamabad G-13 near Srinagar Highway`;
+        description = `Boutique hospitality with uncompromised safety standards in G-13, Islamabad near Srinagar Highway. Gated parking, high speed WiFi & complimentary breakfast.`;
+        keywords = 'lodges in Islamabad, guest house in G-13, lodges near Srinagar Highway';
     }
 
     // 2. Set Page Title
     document.title = title;
 
-    // Helper functions to manage tags cleanly and avoid syntax errors
+    // Helper functions to manage tags cleanly
     const updateOrCreateMeta = (nameAttr: string, valueAttr: string, content: string) => {
       let meta = document.querySelector(`meta[${nameAttr}="${valueAttr}"]`);
       if (!meta) {
@@ -65,15 +71,15 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     // 4. Update OpenGraph Tags
     updateOrCreateMeta('property', 'og:title', title);
     updateOrCreateMeta('property', 'og:description', description);
-    updateOrCreateMeta('property', 'og:url', `https://rhaguesthouse.com/${activePage === 'home' ? '' : '#' + activePage}`);
+    updateOrCreateMeta('property', 'og:url', `https://rhalodges.com/${activePage === 'home' ? '' : '#' + activePage}`);
     updateOrCreateMeta('property', 'og:type', 'website');
-    updateOrCreateMeta('property', 'og:image', 'https://rhaguesthouse.com/images/resort_pool_guesthouse.webp');
+    updateOrCreateMeta('property', 'og:image', 'https://rhalodges.com/images/outside.webp');
 
     // 5. Update Twitter Cards Tags
     updateOrCreateMeta('name', 'twitter:title', title);
     updateOrCreateMeta('name', 'twitter:description', description);
     updateOrCreateMeta('name', 'twitter:card', 'summary_large_image');
-    updateOrCreateMeta('name', 'twitter:image', 'https://rhaguesthouse.com/images/resort_pool_guesthouse.webp');
+    updateOrCreateMeta('name', 'twitter:image', 'https://rhalodges.com/images/outside.webp');
 
     // 6. Dynamic Canonical Link tag
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -82,7 +88,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', `https://rhaguesthouse.com/${activePage === 'home' ? '' : '#' + activePage}`);
+    canonical.setAttribute('href', `https://rhalodges.com/${activePage === 'home' ? '' : '#' + activePage}`);
 
     // LOGIC: SCHEMA.ORG RICH JSON-LD INJECTION
 
@@ -90,15 +96,15 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     const hotelSchema = {
       '@context': 'https://schema.org',
       '@type': 'Hotel',
-      '@id': 'https://rhaguesthouse.com/#hotel',
-      'name': 'RHA Guest House',
-      'alternateName': 'RHA Guesthouse G-13 Islamabad',
-      'description': 'Premium secure boutique guest house in G-13/1, Islamabad near Srinagar Highway and Islamabad Airport. Top amenities, private gated courtyard parking, and family-friendly environment.',
-      'url': 'https://rhaguesthouse.com/',
-      'logo': 'https://rhaguesthouse.com/images/resort_pool_guesthouse.webp',
-      'image': 'https://rhaguesthouse.com/images/resort_pool_guesthouse.webp',
-      'telephone': '+923337477769',
-      'email': 'bookings@rhaguesthouse.com',
+      '@id': 'https://rhalodges.com/#hotel',
+      'name': bName,
+      'alternateName': 'RHA Lodges G-13 Islamabad',
+      'description': 'Premium secure boutique lodges in G-13/1, Islamabad near Srinagar Highway and Islamabad Airport. Top amenities, private gated courtyard parking, and family-friendly environment.',
+      'url': 'https://rhalodges.com/',
+      'logo': 'https://rhalodges.com/images/outside.webp',
+      'image': 'https://rhalodges.com/images/outside.webp',
+      'telephone': bPhone.replace(/\s+/g, ''),
+      'email': bEmail,
       'address': {
         '@type': 'PostalAddress',
         'streetAddress': 'House 58, Street 101, G-13/1',
@@ -112,7 +118,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
         'latitude': '33.6429',
         'longitude': '72.9796'
       },
-      'priceRange': 'PKR 7,000 - 15,000',
+      'priceRange': 'PKR 5,000 - 15,000',
       'starRating': {
         '@type': 'Rating',
         'ratingValue': '4.9'
@@ -162,12 +168,12 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     const localBusinessSchema = {
       '@context': 'https://schema.org',
       '@type': 'BedAndBreakfast',
-      '@id': 'https://rhaguesthouse.com/#localbusiness',
-      'name': 'RHA Guest House',
-      'image': 'https://rhaguesthouse.com/images/resort_pool_guesthouse.webp',
-      'telephone': '+923337477769',
-      'email': 'bookings@rhaguesthouse.com',
-      'url': 'https://rhaguesthouse.com',
+      '@id': 'https://rhalodges.com/#localbusiness',
+      'name': bName,
+      'image': 'https://rhalodges.com/images/outside.webp',
+      'telephone': bPhone.replace(/\s+/g, ''),
+      'email': bEmail,
+      'url': 'https://rhalodges.com',
       'address': {
         '@type': 'PostalAddress',
         'streetAddress': 'House 58, Street 101, G-13/1',
@@ -176,7 +182,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
         'postalCode': '44000',
         'addressCountry': 'PK'
       },
-      'hasMap': 'https://www.google.com/maps/place/golden+Oak+Residence/@33.6428302,72.9626532,18z/data=!4m9!3m8!1s0x38df96473c8d046b:0x958e9929aefb3adf!5m2!4m1!1i2!8m2!3d33.642466!4d72.962583!16s%2Fg%2F11vkjt3hdg?entry=ttu',
+      'hasMap': GUESTHOUSE_CONFIG.googleMapsUrl,
       'openingHours': 'Mo-Su 00:00-23:59',
       'paymentAccepted': 'Cash, Bank Transfer'
     };
@@ -198,15 +204,15 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'How far is Islamabad Airport from RHA Guest House?',
+            'name': `How far is Islamabad Airport from ${bName}?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'RHA Guest House is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free.'
+              'text': `${bName} is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free.`
             }
           },
           {
             '@type': 'Question',
-            'name': 'Is secure parking available at RHA Guest House G-13?',
+            'name': `Is secure parking available at ${bName} G-13?`,
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'Yes, we provide completely free, fully gated, and highly secure private courtyard parking on-site for all our guests with 24/7 security guard presence.'
@@ -230,18 +236,18 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
           },
           {
             '@type': 'Question',
-            'name': 'How can I book a room at RHA Guest House?',
+            'name': `How can I book a room at ${bName}?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'You can book directly with us by clicking any of our \'Book on WhatsApp\' buttons to connect instantly with our 24/7 reservation desk, or you can use our online details inquiry system to request a custom package.'
+              'text': "You can book directly with us by clicking any of our 'Book on WhatsApp' buttons to connect instantly with our 24/7 reservation desk, or you can use our dynamic reservation inquiries widget."
             }
           },
           {
             '@type': 'Question',
-            'name': 'Is RHA Guest House a family-friendly establishment?',
+            'name': `Is ${bName} a family-friendly establishment?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Yes, RHA Guest House is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad.'
+              'text': `Yes, ${bName} is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad.`
             }
           }
         ]
@@ -262,12 +268,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
         existingFaqScript.remove();
       }
     }
-
-    // Clean up when active page changes or component unmounts
-    return () => {
-      // Keep main schemas, but clean up page-specific scripts if needed
-    };
   }, [activePage]);
 
-  return null; // This is a virtual head-side manager, renders nothing to UI
+  return null; // Head-side manager, renders nothing to UI
 }
