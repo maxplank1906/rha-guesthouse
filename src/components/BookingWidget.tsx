@@ -26,10 +26,10 @@ export default function BookingWidget() {
 
   const [checkIn, setCheckIn] = useState(getTomorrowString());
   const [checkOut, setCheckOut] = useState(getDayAfterTomorrowString());
-  const [roomType, setRoomType] = useState('Executive Suite');
+  const [roomType, setRoomType] = useState('Standard Room');
   const [guests, setGuests] = useState('2 Adults');
 
-  const rooms = ['Executive Suite', 'Deluxe Room', 'Family Room'];
+  const rooms = ['Standard Room', 'Deluxe Room', 'Executive Room'];
   const guestOptions = ['1 Adult', '2 Adults', '3 Adults', 'Family (4+ Guests)'];
 
   const handleBookNow = (e: React.FormEvent) => {
