@@ -53,24 +53,32 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
       }`}
     >
       {/* Logo */}
-      <button
+      <a
         id="nav-logo"
-        onClick={() => handleNavClick('home')}
+        href="#home"
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavClick('home');
+        }}
         aria-label="RHA Lodges — Back to home overview"
         className="flex items-center text-left cursor-pointer bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 transition-transform duration-300 hover:opacity-95"
       >
         <Logo layout="horizontal" light={!isDarkBackground} />
-      </button>
+      </a>
 
       {/* Navigation Links - Desktop */}
       <ul className="hidden md:flex items-center gap-10 list-none" role="menubar">
         {navItems.map((item) => (
           <li key={item.value} role="none">
-            <button
-              onClick={() => handleNavClick(item.value)}
+            <a
+              href={`#${item.value}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.value);
+              }}
               role="menuitem"
               aria-current={activePage === item.value ? 'page' : undefined}
-              className={`text-[11px] font-normal tracking-[0.12em] uppercase cursor-pointer bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 rounded-sm transition-colors duration-200 ${
+              className={`text-[11px] font-normal tracking-[0.12em] uppercase cursor-pointer rounded-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 ${
                 activePage === item.value 
                   ? 'text-[#C49B4B]' 
                   : isDarkBackground
@@ -79,7 +87,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
               }`}
             >
               {item.label}
-            </button>
+            </a>
           </li>
         ))}
       </ul>
@@ -135,15 +143,19 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
             <ul className="flex flex-col gap-4 list-none">
               {navItems.map((item) => (
                 <li key={item.value}>
-                  <button
-                    onClick={() => handleNavClick(item.value)}
+                  <a
+                    href={`#${item.value}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.value);
+                    }}
                     aria-current={activePage === item.value ? 'page' : undefined}
-                    className={`text-sm font-medium tracking-wide uppercase cursor-pointer bg-transparent border-none p-0 w-full text-left transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 rounded-sm ${
+                    className={`text-sm font-medium tracking-wide uppercase cursor-pointer block w-full text-left transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2 rounded-sm ${
                       activePage === item.value ? 'text-[#C49B4B]' : 'text-[#16150F]'
                     }`}
                   >
                     {item.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>

@@ -128,6 +128,13 @@ export default function Rooms({ selectedRoomId, onClearSelectedRoom }: RoomsPage
         ))}
       </div>
 
+      {/* Search Engine Friendly Contextual Navigation Footer */}
+      <div className="max-w-6xl mx-auto px-6 mt-24 pt-12 border-t border-[#E8E4DA] text-center space-y-4">
+        <p className="text-xs sm:text-sm font-light text-[#8A897E]">
+          Unsure which accommodation best fits your travel itinerary? Read more <a href="#about" className="text-[#A8813A] font-medium underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">about RHA Lodges comforts & services</a> or browse our <a href="#gallery" className="text-[#A8813A] font-medium underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">pristine photo gallery</a>. For booking support, feel free to <a href="#contact" className="text-[#A8813A] font-medium underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">contact our 24/7 guest desk</a> instantly.
+        </p>
+      </div>
+
     </div>
   );
 }

@@ -15,41 +15,13 @@ export default function Logo({ layout = 'grande', light = false, className = '',
   if (layout === 'horizontal') {
     return (
       <div className={`flex items-center gap-3.5 text-left ${className}`}>
-        {/* Diamond Tower Graphic */}
-        <svg 
-          width="40" 
-          height="45" 
-          viewBox="0 0 100 110" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-          aria-hidden="true"
-        >
-          {/* Diamond Border */}
-          <path d="M50 5 L95 50 L50 95 L5 50 Z" stroke={goldColor} strokeWidth="2.5" fill="none" />
-          
-          {/* Flanking Pillars */}
-          <rect x="36" y="32" width="8" height="30" fill={darkColor} opacity="0.85" />
-          <rect x="56" y="32" width="8" height="30" fill={darkColor} opacity="0.85" />
-          
-          {/* Main Gold Spire */}
-          <path d="M50 15 L47 30 L47 70 L53 70 L53 30 Z" fill={goldColor} />
-          
-          {/* Inner "RHA" in diamond */}
-          <rect x="25" y="44" width="50" height="15" fill="#16150f" className={light ? 'fill-[#FAFAF7]' : 'fill-[#0E0E0A]'} />
-          <text 
-            x="50" 
-            y="56" 
-            textAnchor="middle" 
-            fontFamily="'Playfair Display', 'Georgia', serif" 
-            fontSize="15" 
-            fontWeight="bold" 
-            fill={goldColor}
-            letterSpacing="0.05em"
-          >
-            RHA
-          </text>
-        </svg>
+        {/* Brand Emblem Image uploaded by user */}
+        <img 
+          src="/apple-touch-icon.png" 
+          alt="RHA Lodges Brand Emblem" 
+          className="w-[45px] h-[45px] object-contain shrink-0 rounded-md border border-[#C49B4B]/15"
+          referrerPolicy="no-referrer"
+        />
 
         {/* Text Area */}
         <div className="flex flex-col">
@@ -100,46 +72,14 @@ export default function Logo({ layout = 'grande', light = false, className = '',
   return (
     <div className={`flex flex-col items-center text-center ${className}`}>
       
-      {/* 1. Large Brand Emblem Grid */}
-      <svg 
-        width={height ? (height * 0.9) : 95} 
-        height={height || 105} 
-        viewBox="0 0 100 110" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-        className="mb-4"
-        aria-hidden="true"
-      >
-        {/* Diamond Frame */}
-        <path d="M50 5 L95 50 L50 95 L5 50 Z" stroke={goldColor} strokeWidth="2.5" fill="none" />
-        
-        {/* Back pillars */}
-        <rect x="36" y="32" width="8" height="30" fill={darkColor} opacity="0.85" />
-        <rect x="56" y="32" width="8" height="30" fill={darkColor} opacity="0.85" />
-        
-        {/* High central gold spire */}
-        <path d="M50 15 L47 30 L47 72 L53 72 L53 30 Z" fill={goldColor} />
-        
-        {/* Text mask background block to make RHA readable */}
-        <rect x="25" y="44" width="50" height="15" fill="#16150f" className={light ? 'fill-[#FAFAF7]' : 'fill-[#0E0E0A]'} />
-        
-        {/* Core RHA word centered in diamond */}
-        <text 
-          x="50" 
-          y="56" 
-          textAnchor="middle" 
-          fontFamily="'Playfair Display', 'Georgia', serif" 
-          fontSize="15" 
-          fontWeight="bold" 
-          fill={goldColor}
-          letterSpacing="0.05em"
-        >
-          RHA
-        </text>
-        
-        {/* Subtle decorative arc underneath RHA logo */}
-        <path d="M35 55 Q 50 62 65 55" stroke={goldColor} strokeWidth="1" fill="none" />
-      </svg>
+      {/* 1. Brand Emblem Image uploaded by user */}
+      <img
+        src="/apple-touch-icon.png"
+        alt="RHA Lodges Brand Emblem"
+        style={{ width: height ? (height * 0.9) : 95, height: height || 95 }}
+        className="mb-4 object-contain shrink-0 rounded-lg border border-[#C49B4B]/15"
+        referrerPolicy="no-referrer"
+      />
 
       {/* 2. Brand Name Header */}
       <h3 

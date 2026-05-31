@@ -37,41 +37,61 @@ export default function Footer({ onPageChange }: FooterProps) {
             Navigate
           </h4>
           <nav className="flex flex-col gap-3" aria-label="Footer Navigation">
-            <button
-              onClick={() => handleNavClick('home')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group w-max"
             >
               <span>Home Overview</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('rooms')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
+            </a>
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('rooms');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group w-max"
             >
               <span>Rooms & Suites</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('about')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('about');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group w-max"
             >
               <span>About Our Lodges</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('gallery')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
+            </a>
+            <a
+              href="#gallery"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('gallery');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group w-max"
             >
               <span>Image Gallery</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('contact')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group"
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('contact');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm cursor-pointer flex items-center gap-1 group w-max"
             >
               <span>Contact Desk</span>
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
-            </button>
+            </a>
           </nav>
         </div>
 
@@ -81,24 +101,36 @@ export default function Footer({ onPageChange }: FooterProps) {
             Accommodations
           </h4>
           <div className="flex flex-col gap-3">
-            <button
-              onClick={() => handleNavClick('rooms')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm"
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('rooms');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm w-max"
             >
               The Executive Suite (Master Bed)
-            </button>
-            <button
-              onClick={() => handleNavClick('rooms')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm"
+            </a>
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('rooms');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm w-max"
             >
               Premium Deluxe Room (Attached Bath)
-            </button>
-            <button
-              onClick={() => handleNavClick('rooms')}
-              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm"
+            </a>
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('rooms');
+              }}
+              className="text-xs font-light text-white/50 hover:text-[#C49B4B] transition-colors duration-200 text-left bg-transparent border-none p-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C49B4B] rounded-sm w-max"
             >
               Comfortable Family Stay Suite
-            </button>
+            </a>
             <div className="pt-2">
               <span className="inline-flex items-center gap-1.5 text-[9px] font-medium tracking-wider text-[#C49B4B] uppercase bg-[#C49B4B]/10 px-2.5 py-1">
                 <Shield size={10} /> Family & Execs Only

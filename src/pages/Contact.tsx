@@ -499,7 +499,7 @@ export default function Contact() {
             Ready to Experience Srinagar Highway's Elite Lodging?
           </h3>
           <p className="text-xs font-light text-white/60 leading-relaxed">
-            No endless wait cycles. Direct reservation on WhatsApp offers dynamic availability quotes, personalized meal additions, and secure booking in less than a minute.
+            No endless wait cycles. Direct reservation on WhatsApp offers dynamic availability quotes, personalized meal additions, and secure booking in less than a minute. You can also <a href="#rooms" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">view our executive rooms & suites</a> or discover more <a href="#about" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">about RHA Lodges details & facility setup</a>.
           </p>
           <div className="pt-2">
             <a

@@ -142,6 +142,13 @@ export default function About() {
         </div>
       </div>
 
+      {/* Search Engine Friendly Contextual Navigation Footer */}
+      <div className="max-w-4xl mx-auto px-6 mt-20 text-center">
+        <p className="text-xs sm:text-sm font-light text-[#8A897E]">
+          Ready to experience unmatched boutique luxury in Islamabad? <a href="#rooms" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">View our executive rooms & suites</a> or get in touch with our <a href="#contact" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">24/7 guest reception desk</a> to secure your reservation.
+        </p>
+      </div>
+
     </div>
   );
 }

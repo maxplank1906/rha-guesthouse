@@ -20,8 +20,8 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
 
     switch (activePage) {
       case 'home':
-        title = `${bName} — Premium Luxury Lodges in Islamabad G-13 near Srinagar Highway`;
-        description = `Experience premium hospitality at ${bName}, the leading family lodging standard in G-13 Islamabad near Srinagar Highway and Islamabad Airport. Dual-gate security safety, WiFi, and gated courtyard parking.`;
+        title = `${bName} — Luxury Lodges in G-13, Islamabad`;
+        description = `Experience premium family hospitality at ${bName} G-13 Islamabad. Enjoy secure gated parking, high-speed WiFi, and deluxe rooms near Srinagar Highway.`;
         keywords = 'lodges in Islamabad, guest house in G-13, lodges in G-13, luxury stay G13, guest house near Srinagar Highway, family guest house Islamabad, rha lodges islamabad, rha guesthouse islamabad, rooms for rent in islamabad, airbnb g13 islamabad';
         break;
       case 'rooms':
@@ -45,7 +45,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
         keywords = 'book guest house, contact rha lodges, book rha guest house, lodges near Islamabad airport, whatsapp booking g13';
         break;
       default:
-        title = `${bName} — Premium Luxury Lodges in Islamabad G-13 near Srinagar Highway`;
+        title = `${bName} — Luxury Lodges in G-13, Islamabad`;
         description = `Boutique hospitality with uncompromised safety standards in G-13, Islamabad near Srinagar Highway. Gated parking, high speed WiFi & complimentary breakfast.`;
         keywords = 'lodges in Islamabad, guest house in G-13, lodges near Srinagar Highway';
     }
@@ -196,78 +196,6 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     }
     localScript.text = JSON.stringify(localBusinessSchema);
 
-    // Structure 3: FAQPage Schema (Only on pages containing FAQ items - home and contact)
-    if (activePage === 'home' || activePage === 'contact') {
-      const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        'mainEntity': [
-          {
-            '@type': 'Question',
-            'name': `How far is Islamabad Airport from ${bName}?`,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': `${bName} is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free.`
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': `Is secure parking available at ${bName} G-13?`,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Yes, we provide completely free, fully gated, and highly secure private courtyard parking on-site for all our guests with 24/7 security guard presence.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Is hot breakfast included in the booking?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Absolutely. We offer a delicious complimentary warm Pakistani breakfast (featuring hot parathas, custom omelettes, and Karak tea) or Continental options served daily in our clean dining lounge.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': 'Is high speed WiFi free?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Yes, we provide complimentary ultra-fast, premium fiber optic Wi-Fi connection throughout all guest rooms, sitting lounges, and outdoor spaces.'
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': `How can I book a room at ${bName}?`,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': "You can book directly with us by clicking any of our 'Book on WhatsApp' buttons to connect instantly with our 24/7 reservation desk, or you can use our dynamic reservation inquiries widget."
-            }
-          },
-          {
-            '@type': 'Question',
-            'name': `Is ${bName} a family-friendly establishment?`,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': `Yes, ${bName} is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad.`
-            }
-          }
-        ]
-      };
-
-      let faqScript = document.getElementById('schema-faq') as HTMLScriptElement | null;
-      if (!faqScript) {
-        faqScript = document.createElement('script') as HTMLScriptElement;
-        faqScript.id = 'schema-faq';
-        faqScript.type = 'application/ld+json';
-        document.head.appendChild(faqScript);
-      }
-      faqScript.text = JSON.stringify(faqSchema);
-    } else {
-      // Remove FAQ schema on other pages to keep metadata pristine
-      const existingFaqScript = document.getElementById('schema-faq');
-      if (existingFaqScript) {
-        existingFaqScript.remove();
-      }
-    }
   }, [activePage]);
 
   return null; // Head-side manager, renders nothing to UI

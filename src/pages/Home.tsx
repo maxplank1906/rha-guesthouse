@@ -112,7 +112,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           </div>
           
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-white leading-[1.12] tracking-tight mb-6">
-            Your Premium Stay<br className="hidden sm:inline" /> in Islamabad
+            Your Premium Stay at<br className="hidden sm:inline" /> RHA Lodges Islamabad
           </h1>
           
           <p className="text-xs sm:text-sm md:text-base font-light text-white/80 leading-relaxed max-w-2xl mb-8">
@@ -145,12 +145,16 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="fill-current" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
               Book on WhatsApp
             </a>
-            <button
-              onClick={() => onPageChange('rooms')}
-              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/45 hover:border-white text-white text-xs font-semibold tracking-[0.14em] uppercase py-4.5 px-8 transition-all duration-300 cursor-pointer w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                onPageChange('rooms');
+              }}
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/45 hover:border-white text-white text-xs font-semibold tracking-[0.14em] uppercase py-4.5 px-8 transition-all duration-300 cursor-pointer w-full sm:w-auto text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             >
               Explore Rooms
-            </button>
+            </a>
           </div>
         </div>
 
@@ -236,19 +240,23 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
             <h2 className="font-serif text-3.5xl sm:text-5xl font-normal text-[#16150F] leading-tight">
               Sophisticated Suites<br />& Comfort Rooms
             </h2>
-            <p className="text-xs sm:text-sm font-light text-[#8A897E] max-w-md">
-              Each choice has been curated to serve business professionals, diplomats, and families visiting Islamabad with an uncompromising standard.
+            <p className="text-xs sm:text-sm font-light text-[#8A897E] max-w-sm leading-relaxed">
+              Each choice has been curated to serve business professionals, diplomats, and families visiting Islamabad with an uncompromising standard. We invite you to <a href="#rooms" onClick={(e) => { e.preventDefault(); onPageChange('rooms'); }} className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/35 hover:decoration-[#A8813A] transition-colors">view our premium suites & deluxe rooms</a> to discover our standard setup.
             </p>
           </div>
           
-          <button
-            onClick={() => onPageChange('rooms')}
+          <a
+            href="#rooms"
+            onClick={(e) => {
+              e.preventDefault();
+              onPageChange('rooms');
+            }}
             aria-label="Browse full catalog of suites and rooms"
             className="group inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-[#A8813A] hover:text-[#16150F] transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A8813A]"
           >
             <span>Browse Full Catalog</span>
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
 
         {/* Rooms Showcase Layout - Grid */}
@@ -306,12 +314,16 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
 
           {/* CTA Footer Block */}
           <div className="text-center pt-4">
-            <button
-              onClick={() => onPageChange('about')}
-              className="inline-flex items-center gap-2 bg-[#C49B4B] hover:bg-[#A8813A] text-[#16150f] text-xs font-bold tracking-[0.14em] uppercase py-4 px-8 transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2"
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                onPageChange('about');
+              }}
+              className="inline-flex items-center gap-2 bg-[#C49B4B] hover:bg-[#A8813A] text-[#16150f] text-xs font-bold tracking-[0.14em] uppercase py-4 px-8 transition-colors duration-300 cursor-pointer w-full sm:w-auto text-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49B4B] focus-visible:ring-offset-2"
             >
               Explore Full Guest Story
-            </button>
+            </a>
           </div>
           
         </div>

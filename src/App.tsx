@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ActivePage } from './types';
 import Navbar from './components/Navbar';
@@ -39,6 +39,40 @@ export default function App() {
   const [activePage, setActivePage] = useState<ActivePage>('home');
   const [selectedRoomId, setSelectedRoomId] = useState<string | null>(null);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(hash)) {
+        setActivePage((prev) => {
+          if (prev !== hash) {
+            return hash as ActivePage;
+          }
+          return prev;
+        });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Synchronize hash on initial load
+    const currentHash = window.location.hash.replace('#', '').toLowerCase();
+    if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(currentHash)) {
+      setActivePage(currentHash as ActivePage);
+    } else {
+      // Set default hash cleanly
+      window.history.replaceState(null, '', '#home');
+      setActivePage('home');
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handlePageChange = (page: ActivePage) => {
+    setActivePage(page);
+    window.location.hash = page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleSelectRoom = (roomId: string) => {
     setSelectedRoomId(roomId);
   };
@@ -48,7 +82,7 @@ export default function App() {
       case 'home':
         return (
           <Home 
-            onPageChange={setActivePage} 
+            onPageChange={handlePageChange} 
             onSelectRoom={handleSelectRoom} 
           />
         );
@@ -56,8 +90,8 @@ export default function App() {
         return (
           <Rooms 
             selectedRoomId={selectedRoomId} 
-              onClearSelectedRoom={() => setSelectedRoomId(null)} 
-            />
+            onClearSelectedRoom={() => setSelectedRoomId(null)} 
+          />
         );
       case 'about':
         return <About />;
@@ -68,7 +102,7 @@ export default function App() {
       default:
         return (
           <Home 
-            onPageChange={setActivePage} 
+            onPageChange={handlePageChange} 
             onSelectRoom={handleSelectRoom} 
           />
         );
@@ -81,7 +115,7 @@ export default function App() {
       <SEOHandler activePage={activePage} />
 
       {/* Header Navigation Segment */}
-      <Navbar activePage={activePage} onPageChange={setActivePage} />
+      <Navbar activePage={activePage} onPageChange={handlePageChange} />
 
       {/* Main Content Area with elegant Framer Motion fade-in transition on page change */}
       <main className="flex-1 w-full overflow-hidden">
@@ -102,7 +136,7 @@ export default function App() {
       </main>
 
       {/* Footer Branding Segment */}
-      <Footer onPageChange={setActivePage} />
+      <Footer onPageChange={handlePageChange} />
     </div>
   );
 }

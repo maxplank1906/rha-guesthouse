@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded background matching our classic brand palette to ensure visibility on both light and dark browser themes -->
+  <rect width="100" height="100" rx="20" fill="#16150F"/>
+  
+  <!-- Outer Diamond Border -->
+  <path d="M50 12 L88 50 L50 88 L12 50 Z" stroke="#C49B4B" stroke-width="3" fill="none" />
+  
+  <!-- Flanking Architectural Pillars -->
+  <rect x="38" y="36" width="6" height="28" fill="#FAFAF7" opacity="0.85" />
+  <rect x="56" y="36" width="6" height="28" fill="#FAFAF7" opacity="0.85" />
+  
+  <!-- Central Sovereign Gold Spire -->
+  <path d="M50 20 L47 34 L47 70 L53 70 L53 34 Z" fill="#C49B4B" />
+  
+  <!-- Mask Text Overlay Block -->
+  <rect x="28" y="44" width="44" height="12" fill="#16150F" />
+  
+  <!-- Core Branding Monogram -->
+  <text x="50" y="54" text-anchor="middle" font-family="'Times New Roman', Times, 'Georgia', serif" font-size="12" font-weight="bold" fill="#C49B4B" letter-spacing="0.05em">RHA</text>
+</svg>
