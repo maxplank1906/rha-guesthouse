@@ -182,10 +182,10 @@ export default function Contact() {
                 <div className="space-y-1">
                   <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#16150F]">24/7 Telephone Desk</h4>
                   <a 
-                    href="tel:03337477769"
+                    href="tel:03145961156"
                     className="text-xs font-semibold text-[#16150F] hover:text-[#A8813A]"
                   >
-                    +92 333 7477769
+                    +92 314 5961156
                   </a>
                   <p className="text-[10px] font-light text-[#8A897E]">Direct live voice calling or WhatsApp audio support.</p>
                 </div>
@@ -201,10 +201,10 @@ export default function Contact() {
                 <div className="space-y-1">
                   <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#16150F]">Email Desk</h4>
                   <a 
-                    href="mailto:contact@rhaguesthouse.com"
+                    href="mailto:rhalodges@gmail.com"
                     className="text-xs font-semibold text-[#16150F] hover:text-[#A8813A]"
                   >
-                    contact@rhaguesthouse.com
+                    rhalodges@gmail.com
                   </a>
                   <p className="text-[10px] font-light text-[#8A897E]">For general corporate inquiries, partnerships, or billing.</p>
                 </div>
