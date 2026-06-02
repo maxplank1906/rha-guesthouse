@@ -55,7 +55,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
       {/* Logo */}
       <a
         id="nav-logo"
-        href="#home"
+        href="/"
         onClick={(e) => {
           e.preventDefault();
           handleNavClick('home');
@@ -71,7 +71,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
         {navItems.map((item) => (
           <li key={item.value} role="none">
             <a
-              href={`#${item.value}`}
+              href={item.value === 'home' ? '/' : `/${item.value}`}
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick(item.value);
@@ -144,7 +144,7 @@ export default function Navbar({ activePage, onPageChange }: NavbarProps) {
               {navItems.map((item) => (
                 <li key={item.value}>
                   <a
-                    href={`#${item.value}`}
+                    href={item.value === 'home' ? '/' : `/${item.value}`}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.value);

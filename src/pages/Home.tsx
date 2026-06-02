@@ -29,6 +29,10 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
       answer: "Yes, we provide completely free, fully gated, and highly secure private courtyard parking on-site for all our guests with 24/7 security guard presence."
     },
     {
+      question: "What are the standard check-in and check-out times?",
+      answer: "Standard check-in is after 3:00 PM, and standard check-out is by 12:00 PM (noon). Early check-in and late departures can be requested and are subject to availability."
+    },
+    {
       question: "Is breakfast included?",
       answer: "Absolutely. We offer a delicious complimentary warm Pakistani breakfast (featuring hot parathas, custom omelettes, and Karak tea) or Continental options served daily in our clean dining lounge."
     },
@@ -116,7 +120,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           </h1>
           
           <p className="text-xs sm:text-sm md:text-base font-light text-white/80 leading-relaxed max-w-2xl mb-8">
-            Elegant premium lodges in G-13 Islamabad near Srinagar Highway. 15 mins from Islamabad Airport, Faisal Masjid, Centaurus Mall, and Pakistan Monument.
+            Elegant premium lodges in G-13 Islamabad, near Srinagar Highway and just a 2 min walk from KFC- PSO petrol pump. 15 mins from Islamabad Airport, Faisal Masjid, Centaurus Mall, and Pakistan Monument.
           </p>
 
           {/* Premium Feature Badges */}
@@ -146,7 +150,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               Book on WhatsApp
             </a>
             <a
-              href="#rooms"
+              href="/rooms"
               onClick={(e) => {
                 e.preventDefault();
                 onPageChange('rooms');
@@ -241,12 +245,12 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               Sophisticated Suites<br />& Comfort Rooms
             </h2>
             <p className="text-xs sm:text-sm font-light text-[#8A897E] max-w-sm leading-relaxed">
-              Each choice has been curated to serve business professionals, diplomats, and families visiting Islamabad with an uncompromising standard. We invite you to <a href="#rooms" onClick={(e) => { e.preventDefault(); onPageChange('rooms'); }} className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/35 hover:decoration-[#A8813A] transition-colors">view our premium suites & deluxe rooms</a> to discover our standard setup.
+              Each choice has been curated to serve business professionals, diplomats, and families visiting Islamabad with an uncompromising standard. We invite you to <a href="/rooms" onClick={(e) => { e.preventDefault(); onPageChange('rooms'); }} className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/35 hover:decoration-[#A8813A] transition-colors">view our premium suites & deluxe rooms</a> to discover our standard setup.
             </p>
           </div>
           
           <a
-            href="#rooms"
+            href="/rooms"
             onClick={(e) => {
               e.preventDefault();
               onPageChange('rooms');
@@ -315,7 +319,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
           {/* CTA Footer Block */}
           <div className="text-center pt-4">
             <a
-              href="#about"
+              href="/about"
               onClick={(e) => {
                 e.preventDefault();
                 onPageChange('about');
@@ -343,24 +347,41 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 Explore Islamabad's Top Landmarks
               </h2>
               <p className="text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed">
-                Located in the prestigious <strong className="font-medium text-[#16150F]">G-13 sector of Islamabad</strong> near the <strong className="font-semibold text-[#16150F]">Srinagar Highway</strong> entry ramps, <strong className="text-[#A8813A] font-medium">RHA LODGES</strong> places you within minutes of major transport lanes, commercial hotspots, and tourist destinations.
+                Located in the prestigious <strong className="font-medium text-[#16150F]">G-13 sector of Islamabad</strong> near the <strong className="font-semibold text-[#16150F]">Srinagar Highway</strong> entry ramps (just a <strong className="text-[#A8813A] font-semibold">2 min walk from KFC- PSO petrol pump G-13</strong>), <strong className="text-[#A8813A] font-medium">RHA LODGES</strong> places you within minutes of major transport lanes, commercial hotspots, and tourist destinations.
               </p>
             </div>
             
             {/* Address badge */}
-            <div className="bg-white border border-[#E8E4DA] p-5 text-left min-w-[260px] self-stretch md:self-auto flex flex-col justify-center">
+            <div className="bg-white border border-[#E8E4DA] p-5 text-left min-w-[285px] self-stretch md:self-auto flex flex-col justify-center">
               <span className="text-[9px] font-semibold tracking-wider uppercase text-[#8A897E] block">Search Location</span>
               <p className="font-serif text-xs font-semibold text-[#16150F] flex items-center gap-2.5 mt-1.5">
                 <MapPin size={14} className="text-[#A8813A] shrink-0" /> G-13 Islamabad, Srinagar Highway
               </p>
-              <span className="text-[10px] font-light text-[#8A897E] mt-1">Easy Uber/Careem pick-ups and food deliveries</span>
+              <span className="text-[10px] font-semibold text-[#A8813A] mt-1">2 min walk from KFC - PSO petrol pump</span>
+              <span className="text-[10px] font-light text-[#8A897E] mt-0.5">Easy Uber/Careem pick-ups and food deliveries</span>
             </div>
           </div>
 
           {/* Core Attractions Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             
-            {/* Attraction 1: Islamabad International Airport */}
+            {/* Attraction 1: KFC & PSO G-13 Markaz */}
+            <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">2 Min Walk</span>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">KFC & PSO G-13</h3>
+                  <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
+                    Prime local commercial landmark on G-13/1 corner. Access top brand fast-food, high-standard refueling services, and 24/7 convenience marts within immediate walking distance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Attraction 2: Islamabad International Airport */}
             <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
@@ -368,7 +389,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">15 Mins Drive</span>
-                  <h3 className="font-serif text-lg font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Islamabad Airport</h3>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Islamabad Airport</h3>
                   <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
                     Enjoy seamless, signal-free travel to the flight gates using the Srinagar Highway. Ideal for international travelers.
                   </p>
@@ -376,15 +397,15 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               </div>
             </div>
 
-            {/* Attraction 2: Faisal Masjid */}
+            {/* Attraction 3: Faisal Masjid */}
             <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
-                  <MapPin size={18} />
+                  <Compass size={18} />
                 </div>
                 <div>
                   <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">18 Mins Drive</span>
-                  <h3 className="font-serif text-lg font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Faisal Masjid</h3>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Faisal Masjid</h3>
                   <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
                     Visit the national mosque of Pakistan, situated majestically at the northernmost point of the capital against Margalla Hills.
                   </p>
@@ -392,7 +413,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               </div>
             </div>
 
-            {/* Attraction 3: Centaurus Mall */}
+            {/* Attraction 4: Centaurus Mall */}
             <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
@@ -400,7 +421,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">15 Mins Drive</span>
-                  <h3 className="font-serif text-lg font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Centaurus Mall</h3>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Centaurus Mall</h3>
                   <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
                     A premier retail landmark and shopping core, featuring high-end international brands and exceptional restaurant dining sets.
                   </p>
@@ -408,7 +429,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               </div>
             </div>
 
-            {/* Attraction 4: Pakistan Monument */}
+            {/* Attraction 5: Pakistan Monument */}
             <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
@@ -416,7 +437,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">13 Mins Drive</span>
-                  <h3 className="font-serif text-lg font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Pakistan Monument</h3>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">Pakistan Monument</h3>
                   <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
                     Located on Shakarparian hills, this striking petaled monument represents national unity, cultural legacy, and panoramic city views.
                   </p>
@@ -424,7 +445,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
               </div>
             </div>
 
-            {/* Attraction 5: F-10 Markaz */}
+            {/* Attraction 6: F-10 Markaz */}
             <div className="bg-white border border-[#E8E4DA] p-6 hover:shadow-md hover:border-[#A8813A]/45 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="w-10 h-10 border border-[#A8813A]/25 flex items-center justify-center text-[#A8813A] bg-[#FAFAF7] transition-all group-hover:bg-[#F5EDD8]">
@@ -432,7 +453,7 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 </div>
                 <div>
                   <span className="text-[9px] font-bold tracking-wider text-[#A8813A] uppercase block">12 Mins Drive</span>
-                  <h3 className="font-serif text-lg font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">F-10 Markaz</h3>
+                  <h3 className="font-serif text-base font-normal text-[#16150F] mt-1 group-hover:text-[#A8813A] transition-colors">F-10 Markaz</h3>
                   <p className="text-[11px] font-light text-[#8A897E] leading-relaxed mt-2">
                     Explore one of the busiest business and dining markazs in Islamabad, complete with leading financial services, cafes, and markets.
                   </p>
@@ -640,12 +661,10 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
         </div>
       </section>
 
-      {/* 5.8. SEO-FRIENDLY ACCESSIBLE FAQ ACCORDION SECTION */}
+      {/* 5.8. ACCESSIBLE FAQ ACCORDION SECTION */}
       <section 
         className="bg-white py-24 px-6 md:px-16 border-b border-[#E8E4DA]" 
         id="faq-section"
-        itemScope 
-        itemType="https://schema.org/FAQPage"
       >
         <div className="max-w-4xl mx-auto space-y-12">
           
@@ -670,9 +689,6 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                 <div 
                   key={index} 
                   className="border border-[#E8E4DA] bg-[#FAFAF7] hover:border-[#16150f]/30 transition-all duration-300"
-                  itemProp="mainEntity" 
-                  itemScope 
-                  itemType="https://schema.org/Question"
                 >
                   {/* Accordion Header Trigger */}
                   <button
@@ -684,7 +700,6 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                     type="button"
                   >
                     <span 
-                      itemProp="name" 
                       className="font-serif text-[15px] sm:text-[17px] font-normal text-[#16150F] group-hover:text-[#A8813A] transition-colors"
                     >
                       {faq.question}
@@ -701,12 +716,9 @@ export default function Home({ onPageChange, onSelectRoom }: HomeProps) {
                     aria-labelledby={`faq-header-${index}`}
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'block' : 'hidden'}`}
                     style={{ maxHeight: isOpen ? '240px' : '0' }}
-                    itemProp="acceptedAnswer" 
-                    itemScope 
-                    itemType="https://schema.org/Answer"
                   >
                     <div className="p-5 sm:p-6 text-xs sm:text-sm font-light text-[#8A897E] leading-relaxed bg-white border-t border-[#E8E4DA]">
-                      <div itemProp="text" className="space-y-2">
+                      <div className="space-y-2">
                         <p>{faq.answer}</p>
                       </div>
                     </div>

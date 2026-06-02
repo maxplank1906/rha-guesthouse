@@ -26,6 +26,10 @@ const FAQ_ITEMS = [
     answer: "Yes, we provide completely free, fully gated, and highly secure private courtyard parking on-site for all our guests with 24/7 security guard presence."
   },
   {
+    question: "What are the standard check-in and check-out times?",
+    answer: "Standard check-in is after 3:00 PM, and standard check-out is by 12:00 PM (noon). Early check-in and late departures can be requested and are subject to availability."
+  },
+  {
     question: "Is breakfast included?",
     answer: "Absolutely. We offer a delicious complimentary warm Pakistani breakfast (featuring hot parathas, custom omelettes, and Karak tea) or Continental options served daily in our clean dining lounge."
   },
@@ -142,7 +146,7 @@ export default function Contact() {
                   <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#16150F]">Address</h4>
                   <p className="text-xs font-medium text-[#16150F]">
                     House 58 St 101, G-13/1, Islamabad <br />
-                    <span className="text-xs font-light text-[#8A897E]">Next to Srinagar Highway Ramps</span>
+                    <span className="text-xs font-light text-[#8A897E]">Next to Srinagar Highway Ramps (2 min walk from KFC- PSO petrol pump G-13)</span>
                   </p>
                   
                   {/* Interactive Address Tools */}
@@ -499,7 +503,7 @@ export default function Contact() {
             Ready to Experience Srinagar Highway's Elite Lodging?
           </h3>
           <p className="text-xs font-light text-white/60 leading-relaxed">
-            No endless wait cycles. Direct reservation on WhatsApp offers dynamic availability quotes, personalized meal additions, and secure booking in less than a minute. You can also <a href="#rooms" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">view our executive rooms & suites</a> or discover more <a href="#about" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">about RHA Lodges details & facility setup</a>.
+            No endless wait cycles. Direct reservation on WhatsApp offers dynamic availability quotes, personalized meal additions, and secure booking in less than a minute. You can also <a href="/rooms" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">view our executive rooms & suites</a> or discover more <a href="/about" className="text-[#C49B4B] font-semibold underline decoration-[#C49B4B]/30 hover:text-white transition-colors">about RHA Lodges details & facility setup</a>.
           </p>
           <div className="pt-2">
             <a

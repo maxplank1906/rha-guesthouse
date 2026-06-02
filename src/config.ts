@@ -3,7 +3,7 @@ export const GUESTHOUSE_CONFIG = {
   phone: '+92 314 5961156', // Official WhatsApp number
   whatsappNumberUrl: '923145961156', // Without plus or spaces
   email: 'rhalodges@gmail.com',
-  address: 'House 58 St 101, G-13/1, G-13, Islamabad, Pakistan (Near Srinagar Highway)',
+  address: 'House 58 St 101, G-13/1, G-13, Islamabad, Pakistan (Near Srinagar Highway — 2 min walk from KFC- PSO petrol pump G-13)',
   rating: '4.9',
   reviewsCount: '150+',
   facebookUrl: 'https://facebook.com/rhalodges',

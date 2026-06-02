@@ -38,7 +38,7 @@ export default function Footer({ onPageChange }: FooterProps) {
           </h4>
           <nav className="flex flex-col gap-3" aria-label="Footer Navigation">
             <a
-              href="#home"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('home');
@@ -49,7 +49,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
             </a>
             <a
-              href="#rooms"
+              href="/rooms"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('rooms');
@@ -60,7 +60,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
             </a>
             <a
-              href="#about"
+              href="/about"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('about');
@@ -71,7 +71,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
             </a>
             <a
-              href="#gallery"
+              href="/gallery"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('gallery');
@@ -82,7 +82,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#C49B4B]" />
             </a>
             <a
-              href="#contact"
+              href="/contact"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('contact');
@@ -102,7 +102,7 @@ export default function Footer({ onPageChange }: FooterProps) {
           </h4>
           <div className="flex flex-col gap-3">
             <a
-              href="#rooms"
+              href="/rooms"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('rooms');
@@ -112,7 +112,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               The Executive Suite (Master Bed)
             </a>
             <a
-              href="#rooms"
+              href="/rooms"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('rooms');
@@ -122,7 +122,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               Premium Deluxe Room (Attached Bath)
             </a>
             <a
-              href="#rooms"
+              href="/rooms"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('rooms');
@@ -149,7 +149,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <MapPin size={15} className="text-[#C49B4B] shrink-0 mt-0.5" />
               <span>
                 House 58 St 101, G-13/1, Islamabad <br />
-                <span className="text-[11px] text-white/30">(Near Srinagar Highway entries)</span>
+                <span className="text-[11px] text-white/30">(Near Srinagar Highway entries — 2 min walk from KFC- PSO petrol pump G-13)</span>
               </span>
             </div>
             
@@ -196,7 +196,7 @@ export default function Footer({ onPageChange }: FooterProps) {
         
         {/* Left Side */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center md:text-left">
-          <span>© {currentYear} {GUESTHOUSE_CONFIG.name}. Developed for prestige hospitality and curated sanitization standards.</span>
+          <span>© {currentYear} {GUESTHOUSE_CONFIG.name}. All rights reserved.</span>
         </div>
 
         {/* Right Side: Social Media Branding */}

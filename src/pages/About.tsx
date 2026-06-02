@@ -43,7 +43,7 @@ export default function About() {
             Where Comfort Meets Elegance
           </h1>
           <p className="text-xs sm:text-sm font-light text-[#8A897E] max-w-xl mx-auto leading-relaxed">
-            Nestled inside the elite G-13/1 sector of Islamabad right next to Srinagar Highway, RHA Lodges offers unmatched tranquility, elite security, and bespoke boutique style.
+            Nestled inside the elite G-13/1 sector of Islamabad right next to Srinagar Highway (just a 2 min walk from KFC- PSO petrol pump), RHA Lodges offers unmatched tranquility, elite security, and bespoke boutique style.
           </p>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function About() {
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#A8813A]" />
-              <span className="text-xs font-medium text-[#16150F]">2 minutes transit to Srinagar Highway exit ramps</span>
+              <span className="text-xs font-medium text-[#16150F]">2 mins transit to Srinagar Highway (2 min walk from KFC- PSO petrol pump G-13)</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#A8813A]" />
@@ -145,7 +145,7 @@ export default function About() {
       {/* Search Engine Friendly Contextual Navigation Footer */}
       <div className="max-w-4xl mx-auto px-6 mt-20 text-center">
         <p className="text-xs sm:text-sm font-light text-[#8A897E]">
-          Ready to experience unmatched boutique luxury in Islamabad? <a href="#rooms" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">View our executive rooms & suites</a> or get in touch with our <a href="#contact" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">24/7 guest reception desk</a> to secure your reservation.
+          Ready to experience unmatched boutique luxury in Islamabad? <a href="/rooms" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">View our executive rooms & suites</a> or get in touch with our <a href="/contact" className="text-[#A8813A] font-semibold underline decoration-[#C49B4B]/30 hover:decoration-[#A8813A] transition-colors">24/7 guest reception desk</a> to secure your reservation.
         </p>
       </div>
 

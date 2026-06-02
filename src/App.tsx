@@ -40,36 +40,54 @@ export default function App() {
   const [selectedRoomId, setSelectedRoomId] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '').toLowerCase();
-      if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(hash)) {
+    const handleLocationChange = () => {
+      let path = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
+      if (path === '') {
+        path = 'home';
+      }
+      if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(path)) {
         setActivePage((prev) => {
-          if (prev !== hash) {
-            return hash as ActivePage;
+          if (prev !== path) {
+            return path as ActivePage;
           }
           return prev;
         });
+      } else {
+        // Fallback for subpaths or undefined redirects
+        setActivePage('home');
       }
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Synchronize hash on initial load
-    const currentHash = window.location.hash.replace('#', '').toLowerCase();
-    if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(currentHash)) {
-      setActivePage(currentHash as ActivePage);
-    } else {
-      // Set default hash cleanly
-      window.history.replaceState(null, '', '#home');
-      setActivePage('home');
-    }
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (target) {
+        const href = target.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          const page = href.replace(/^\//, '') || 'home';
+          if (['home', 'rooms', 'gallery', 'about', 'contact'].includes(page)) {
+            e.preventDefault();
+            handlePageChange(page as ActivePage);
+          }
+        }
+      }
+    };
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('click', handleGlobalClick);
+    
+    // Synchronize initial pathname
+    handleLocationChange();
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('click', handleGlobalClick);
+    };
   }, []);
 
   const handlePageChange = (page: ActivePage) => {
     setActivePage(page);
-    window.location.hash = page;
+    const path = page === 'home' ? '/' : `/${page}`;
+    window.history.pushState(null, '', path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

@@ -21,7 +21,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     switch (activePage) {
       case 'home':
         title = `${bName} — Luxury Lodges in G-13, Islamabad`;
-        description = `Experience premium family hospitality at ${bName} G-13 Islamabad. Enjoy secure gated parking, high-speed WiFi, and deluxe rooms near Srinagar Highway.`;
+        description = `Experience premium family hospitality at ${bName} G-13 Islamabad, just a 2 min walk from KFC- PSO petrol pump near Srinagar Highway. Enjoy secure gated parking, high-speed WiFi, and deluxe rooms.`;
         keywords = 'lodges in Islamabad, guest house in G-13, lodges in G-13, luxury stay G13, guest house near Srinagar Highway, family guest house Islamabad, rha lodges islamabad, rha guesthouse islamabad, rooms for rent in islamabad, airbnb g13 islamabad';
         break;
       case 'rooms':
@@ -71,15 +71,15 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     // 4. Update OpenGraph Tags
     updateOrCreateMeta('property', 'og:title', title);
     updateOrCreateMeta('property', 'og:description', description);
-    updateOrCreateMeta('property', 'og:url', `https://rhalodges.com/${activePage === 'home' ? '' : '#' + activePage}`);
+    updateOrCreateMeta('property', 'og:url', `https://www.rhalodges.com/${activePage === 'home' ? '' : activePage}`);
     updateOrCreateMeta('property', 'og:type', 'website');
-    updateOrCreateMeta('property', 'og:image', 'https://rhalodges.com/images/outside.webp');
+    updateOrCreateMeta('property', 'og:image', 'https://www.rhalodges.com/images/outside.webp');
 
     // 5. Update Twitter Cards Tags
     updateOrCreateMeta('name', 'twitter:title', title);
     updateOrCreateMeta('name', 'twitter:description', description);
     updateOrCreateMeta('name', 'twitter:card', 'summary_large_image');
-    updateOrCreateMeta('name', 'twitter:image', 'https://rhalodges.com/images/outside.webp');
+    updateOrCreateMeta('name', 'twitter:image', 'https://www.rhalodges.com/images/outside.webp');
 
     // 6. Dynamic Canonical Link tag
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -88,7 +88,7 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', `https://rhalodges.com/${activePage === 'home' ? '' : '#' + activePage}`);
+    canonical.setAttribute('href', `https://www.rhalodges.com/${activePage === 'home' ? '' : activePage}`);
 
     // LOGIC: SCHEMA.ORG RICH JSON-LD INJECTION
 
@@ -96,13 +96,13 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     const hotelSchema = {
       '@context': 'https://schema.org',
       '@type': 'Hotel',
-      '@id': 'https://rhalodges.com/#hotel',
+      '@id': 'https://www.rhalodges.com/#hotel',
       'name': bName,
       'alternateName': 'RHA Lodges G-13 Islamabad',
-      'description': 'Premium secure boutique lodges in G-13/1, Islamabad near Srinagar Highway and Islamabad Airport. Top amenities, private gated courtyard parking, and family-friendly environment.',
-      'url': 'https://rhalodges.com/',
-      'logo': 'https://rhalodges.com/images/outside.webp',
-      'image': 'https://rhalodges.com/images/outside.webp',
+      'description': 'Premium secure boutique lodges in G-13/1, Islamabad, just a 2 min walk from KFC- PSO petrol pump G-13 srinagar highway near Islamabad Airport. Top amenities, private gated courtyard parking, and family-friendly environment.',
+      'url': 'https://www.rhalodges.com/',
+      'logo': 'https://www.rhalodges.com/images/outside.webp',
+      'image': 'https://www.rhalodges.com/images/outside.webp',
       'telephone': bPhone.replace(/\s+/g, ''),
       'email': bEmail,
       'address': {
@@ -168,12 +168,12 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
     const localBusinessSchema = {
       '@context': 'https://schema.org',
       '@type': 'BedAndBreakfast',
-      '@id': 'https://rhalodges.com/#localbusiness',
+      '@id': 'https://www.rhalodges.com/#localbusiness',
       'name': bName,
-      'image': 'https://rhalodges.com/images/outside.webp',
+      'image': 'https://www.rhalodges.com/images/outside.webp',
       'telephone': bPhone.replace(/\s+/g, ''),
       'email': bEmail,
-      'url': 'https://rhalodges.com',
+      'url': 'https://www.rhalodges.com',
       'address': {
         '@type': 'PostalAddress',
         'streetAddress': 'House 58, Street 101, G-13/1',
@@ -195,6 +195,85 @@ export default function SEOHandler({ activePage }: SEOHandlerProps) {
       document.head.appendChild(localScript);
     }
     localScript.text = JSON.stringify(localBusinessSchema);
+
+    // Structure 3: FAQPage Schema (Dynamically injected only on Home page to prevent GSC validation/duplicate conflicts)
+    let faqScript = document.getElementById('schema-faq') as HTMLScriptElement | null;
+    if (activePage === 'home') {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'How far is Islamabad Airport?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'RHA Lodges is located approximately 15 minutes away from the Islamabad International Airport via the sign-free, direct lanes of the Srinagar Highway, making arrivals and departures extremely quick and hassle-free.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Is parking available?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes, we provide completely free, fully gated, and highly secure private courtyard parking on-site for all our guests with 24/7 security guard presence.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'What are the standard check-in and check-out times?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Standard check-in is after 3:00 PM, and standard check-out is by 12:00 PM (noon). Early check-in and late departures can be requested and are subject to availability.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Is breakfast included?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Absolutely. We offer a delicious complimentary warm Pakistani breakfast (featuring hot parathas, custom omelettes, and Karak tea) or Continental options served daily in our clean dining lounge.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Is WiFi free?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes, we provide complimentary ultra-fast, premium fiber optic Wi-Fi connection throughout all guest rooms, sitting lounges, and outdoor spaces.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'How can I book a room?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': "You can book directly with us by clicking any of our 'Book on WhatsApp' buttons to connect instantly with our 24/7 reservation desk, or you can use our online details inquiry system to request a custom package."
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Is family stay available?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes, RHA Lodges is fully family-friendly. We maintain a very quiet, secure, and highly ethical lodging standard strictly catered for families, diplomatic staffers, and corporate executives visiting Islamabad.'
+            }
+          }
+        ]
+      };
+
+      if (!faqScript) {
+        faqScript = document.createElement('script') as HTMLScriptElement;
+        faqScript.id = 'schema-faq';
+        faqScript.type = 'application/ld+json';
+        document.head.appendChild(faqScript);
+      }
+      faqScript.text = JSON.stringify(faqSchema);
+    } else {
+      if (faqScript) {
+        faqScript.remove();
+      }
+    }
 
   }, [activePage]);
 
